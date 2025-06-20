@@ -1,106 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Software Products Limited</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom colours */
+    .brand-blue { --tw-text-opacity: 1; color: rgba(30, 58, 138, var(--tw-text-opacity)); }
+    .brand-bg { --tw-bg-opacity: 1; background-color: rgba(30, 58, 138, var(--tw-bg-opacity)); }
+  </style>
 </head>
-<body>
+<body class="antialiased text-gray-800">
   <!-- Navigation -->
-  <header>
-    <nav>
-      <div class="logo">
-        <!-- TODO: Replace with company logo -->
-        <a href="#">Simple Software Products</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#why">Why Choose Us</a></li>
-        <li><a href="#product">Our Product</a></li>
-        <li><a href="#about">Who We Are</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <header class="bg-white shadow-md fixed w-full z-10">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <a href="#home" class="text-xl font-bold brand-blue">Simple Software Products</a>
+      <nav>
+        <ul class="hidden md:flex space-x-6">
+          <li><a href="#home" class="hover:underline">Home</a></li>
+          <li><a href="#why" class="hover:underline">Why Choose Us</a></li>
+          <li><a href="#product" class="hover:underline">Our Product</a></li>
+          <li><a href="#about" class="hover:underline">Who We Are</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+        <button id="nav-toggle" class="md:hidden focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="nav-menu" class="hidden bg-white">
+      <ul class="flex flex-col space-y-2 p-4">
+        <li><a href="#home" class="block">Home</a></li>
+        <li><a href="#why" class="block">Why Choose Us</a></li>
+        <li><a href="#product" class="block">Our Product</a></li>
+        <li><a href="#about" class="block">Who We Are</a></li>
+        <li><a href="#contact" class="block">Contact</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Effortless Transport Management with FleetYes</h1>
-      <p>Streamline your logistics, boost efficiency, and stay ahead with our advanced TMS platform.</p>
-      <a href="https://fleetyes.com" class="cta-button">Book a Demo</a>
-    </div>
-    <div class="hero-image">
-      <!-- TODO: Add illustrative image or illustration -->
+  <section id="home" class="pt-24 bg-gray-50">
+    <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center py-16">
+      <div class="w-full lg:w-1/2 text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 brand-blue">Effortless Transport Management with FleetYes</h1>
+        <p class="mb-6 text-lg">Streamline your logistics, boost efficiency, and stay ahead with our advanced TMS platform.</p>
+        <a href="https://fleetyes.com" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition">Book a Demo</a>
+      </div>
+      <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+        <img src="https://via.placeholder.com/600x400" alt="FleetYes Dashboard" class="rounded-lg shadow-lg">
+      </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
-  <section id="why" class="features">
-    <h2>Why Choose Simple Software Products Limited?</h2>
-    <div class="feature-list">
-      <div class="feature-item">
-        <h3>Advanced Transport Management</h3>
+  <section id="why" class="py-16">
+    <div class="container mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold brand-blue">Why Choose Simple Software Products Limited?</h2>
+    </div>
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Advanced Transport Management</h3>
         <p>Manage operations, track vehicles, and automate workflows—all from one console.</p>
       </div>
-      <div class="feature-item">
-        <h3>Driver App & API</h3>
+      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Driver App & API</h3>
         <p>Empower drivers with our mobile app and integrate seamlessly with your systems via open APIs.</p>
       </div>
-      <div class="feature-item">
-        <h3>Real-Time Analytics</h3>
+      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Real-Time Analytics</h3>
         <p>Gain insights on performance, fuel usage, and expenses with live dashboards.</p>
       </div>
-      <div class="feature-item">
-        <h3>Customisable & Scalable</h3>
+      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Customisable & Scalable</h3>
         <p>Adapt the solution to your needs and grow without limits.</p>
       </div>
     </div>
   </section>
 
   <!-- Our Product -->
-  <section id="product" class="product-overview">
-    <h2>Introducing FleetYes</h2>
-    <p>FleetYes by Simple Software Products Limited is a comprehensive transport management system designed to streamline your logistics operations, improve driver adoption, and reduce costs.</p>
-    <ul>
-      <li>Operations Console for package management</li>
-      <li>Driver App for iOS & Android</li>
-      <li>REST API Support</li>
-      <li>Fuel, Toll & Parking Monitoring</li>
-    </ul>
-    <a href="https://fleetyes.com" class="cta-button-secondary">Explore More Features</a>
+  <section id="product" class="bg-gray-50 py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold brand-blue mb-4">Introducing FleetYes</h2>
+      <p class="mb-6 max-w-xl mx-auto">FleetYes by Simple Software Products Limited is a comprehensive transport management system designed to streamline your logistics operations, improve driver adoption, and reduce costs.</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 max-w-2xl mx-auto text-left">
+        <li class="flex items-start"><span class="mr-2 text-blue-600">•</span>Operations Console for package management</li>
+        <li class="flex items-start"><span class="mr-2 text-blue-600">•</span>Driver App for iOS & Android</li>
+        <li class="flex items-start"><span class="mr-2 text-blue-600">•</span>REST API Support</li>
+        <li class="flex items-start"><span class="mr-2 text-blue-600">•</span>Fuel, Toll & Parking Monitoring</li>
+      </ul>
+      <a href="https://fleetyes.com" class="px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition">Explore More Features</a>
+    </div>
   </section>
 
   <!-- Who We Are -->
-  <section id="about" class="about-us">
-    <h2>Who We Are</h2>
-    <p>At Simple Software Products Limited, our mission is to empower businesses with innovative software solutions. Founded by transport and tech experts, we are dedicated to delivering reliable, scalable platforms that drive success for our clients.</p>
-    <p>Our team combines deep industry knowledge with cutting-edge development practices to ensure you always stay ahead.</p>
+  <section id="about" class="py-16">
+    <div class="container mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold brand-blue mb-4">Who We Are</h2>
+      <p class="mb-4">At Simple Software Products Limited, our mission is to empower businesses with innovative software solutions. Founded by transport and tech experts, we are dedicated to delivering reliable, scalable platforms that drive success for our clients.</p>
+      <p>Our team combines deep industry knowledge with cutting-edge development practices to ensure you always stay ahead.</p>
+    </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <p><strong>Location:</strong> 6, Maplehurst Close, Dartford, Kent, DA2 7WX, United Kingdom</p>
-    <p><strong>Phone:</strong> +44 20 3290 3256</p>
-    <p><strong>Email:</strong> sales@fleetyes.com</p>
-    <form action="#" method="post" class="contact-form">
-      <input type="text" name="first_name" placeholder="First Name" required>
-      <input type="text" name="last_name" placeholder="Last Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <section id="contact" class="bg-gray-50 py-16">
+    <div class="container mx-auto max-w-lg text-center">
+      <h2 class="text-3xl font-bold brand-blue mb-4">Contact Us</h2>
+      <p class="mb-2"><strong>Location:</strong> 6 Maplehurst Close, Dartford, Kent, DA2 7WX, United Kingdom</p>
+      <p class="mb-2"><strong>Phone:</strong> +44 20 3290 3256</p>
+      <p class="mb-6"><strong>Email:</strong> <a href="mailto:sales@fleetyes.com" class="text-blue-600 hover:underline">sales@fleetyes.com</a></p>
+      <form action="#" method="post" class="space-y-4 text-left">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="text" name="first_name" placeholder="First Name" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
+          <input type="text" name="last_name" placeholder="Last Name" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
+        </div>
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
+        <textarea name="message" placeholder="Message" rows="5" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"></textarea>
+        <button type="submit" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">Send Message</button>
+      </form>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Simple Software Products Limited. All rights reserved.</p>
-    <ul class="social-links">
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">X</a></li>
-      <li><a href="#">Instagram</a></li>
-    </ul>
+  <!-- Footer -->
+  <footer class="bg-white py-6">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">&copy; 2025 Simple Software Products Limited. All rights reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#" aria-label="Facebook" class="hover:text-blue-600">Facebook</a>
+        <a href="#" aria-label="X" class="hover:text-blue-600">X</a>
+        <a href="#" aria-label="Instagram" class="hover:text-blue-600">Instagram</a>
+      </div>
+    </div>
   </footer>
+
+  <!-- Mobile nav toggle script -->
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+      var menu = document.getElementById('nav-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
